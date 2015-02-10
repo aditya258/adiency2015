@@ -1,0 +1,38 @@
+<div class="container">
+    
+<div>
+	<!-- <div ng-view> -->
+  <CENTER><h3> LOGIN </H3></CENTER>
+  <form name="myform" ng-submit="submitmyform(myform.$valid)"  novalidate>
+    <div class="form-group" ng-class="{ 'has-error' : myform.lemail.$invalid && !myform.lemail.$pristine }">
+            <!-- <label>Email</label> -->
+            <input type="email" name="lemail" placeholder="Enter E-Mail ID" class="form-control" ng-model="lemail" required/>
+            <p ng-show="myform.lemail.$invalid && !myform.lemail.$pristine" class="help-block">Enter a valid email.</p>
+<!--              <p ng-show="myform.lemail.$invalid && !myform.lemail.$pristine" class="help-block">You e-mail is required.</p>
+ -->
+        </div>
+<!--     <input type="email" ng-model="lemail" placeholder="enter email_id" class="form-control" />
+ -->    <br>
+ <div class="form-group" ng-class="{ 'has-error' : myform.pwd.$invalid && !myform.pwd.$pristine }">
+            <!-- <label>Username</label> -->
+            <input type="password" name="lpwd" placeholder="Enter Password" class="form-control" ng-model="lpwd" required/>
+             <p ng-show="myform.lpwd.$invalid && !myform.lpwd.$pristine" class="help-block">You password is required.</p>
+
+        </div>
+<!--     <input type="password" ng-model="lpassword"  placeholder="enter password" class="form-control" />
+ -->    <br>
+     <input type="submit" class="btn btn-primary" value="login" id=""> 
+  </form>
+ <!--  <pre>list2={{list2}}</pre>
+<pre>list3={{list3}}</pre> -->
+  <br>
+  <p><a class="btn  btn-danger" href="#/signup" > sign up <span class="glyphicon glyphicon-plus"></span></a></p>
+</div>
+  <!-- <script src="scripts/app.js"></script>
+ //        <script src="scripts/controllers/main.js"></script>
+ //        <script src="scripts/controllers/about.js"></script>
+ //         <script src="scripts/controllers/login.js"></script> -->
+</div>
+
+<!-- <script src="scripts/app.js"></script>
+ <script src="scripts/controllers/main.js"></script> -->
