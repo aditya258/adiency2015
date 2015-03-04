@@ -1,0 +1,114 @@
+ <!-- Bootstrap Core CSS -->
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="styles/simple-sidebar.css" rel="stylesheet">
+
+<div class="page-container">
+<div class="header" ng-controller="searchCtrl">
+ 
+        <form name="mysearch" ng-submit="submitmysearch(mysearch.$valid)"  class="form-inline">
+    <input ng-model="word" type="text" name="word"  class="form-control" size="85" required/>
+    <button type="submit" class="btn btn-primary">GO <span class="glyphicon glyphicon-search"></span></button>
+        </form>
+    </div>
+    
+    
+           <div id="sidebar-wrapper">
+<div ng-controller="loginCtrl">
+            <ul class="sidebar-nav">
+              <li class="sidebar-brand" ng-if="!vari">
+                    <a ng-click="direct()">
+                        Main Page
+                    </a>
+                </li>
+                <li class="sidebar-brand" ng-if="!vari">
+                    <a href="#/authdetail">
+                        User Details
+                    </a>
+                </li>
+                <li class="sidebar-brand" ng-if="con">
+                    <a href="#/edit">Edit Content</a>
+                </li>
+                <li class="sidebar-brand" ng-controller="searchinCtrl">
+                      <a ng-click="random()">Random Article</a>
+                </li>
+                 <li class="sidebar-brand" ng-controller="searchinCtrl">
+                    <a ng-click="latest()">Latest Article </a>               
+                 </li>
+               <li class="sidebar-brand" ng-controller="adminCtrl" ng-show="v">
+                    <a href="#/deleteuser">Remove User</a>
+                </li>
+                <li class="sidebar-brand" ng-controller="adminCtrl">
+                    <a href="#/createarticle">Create Article</a>
+                </li>
+                 <li class="sidebar-brand" ng-controller="adminCtrl" ng-show="v">
+                    <a href="#/deletearticle">Delete Article</a>
+                </li>
+                <li class="sidebar-brand" ng-controller="adminCtrl" ng-if="con">
+                    <a href="#/revisionhistory">Revision History</a>
+                </li>
+               <!--  <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li> -->
+            </ul>
+        </div>
+        </div>
+<div class="main-content" ng-controller="adminCtrl">
+<center>
+    <h2 style="font-family:Comic Sans MS"><i>Create Article</i></h2>
+<hr>
+    <form name="createarticle"  ng-submit="createarti()" data-ng-init="articledisp()" >
+        
+<!--             {{users}} -->   
+     
+   <!--  <div ng-repeat="x in arti">
+        <input type="radio"  value="{{x.page}}" name="name1" ng-model="$parent.page1" >
+        <lable style="font-family:Comic Sans MS; font-size:150%"> Page Name: {{x.page}}  <br>  Category: {{x.category_id}}
+        </label>
+      <br><br>
+       <hr>
+       </div> -->choose any one:
+       <input type="radio"  value="1" name="top1" ng-model="$parent.top1" ng-click="chk()">create new   <input type="radio"  value="2" name="top1" ng-model="$parent.top1" ng-click="chk()" required/>modify existing article
+       <br>
+<!--        {{top1}} {{a}}
+ -->       <div ng-show="a">
+        <br>
+<input type="text" name="topic" placeholder="Enter article heading" class="form-control" ng-model="topic" required/>
+       <br>
+   </div>
+   <div ng-show="!a" >
+       Article to edit:<select id="section" ng-model="topic" class="form-control" required/ >
+  <option value={{t.page}}  ng-repeat="t in arti">{{t.page}}</option>
+  </select>
+  <br>
+</div>
+       <input type="text" name="cat" placeholder="Enter category" class="form-control" ng-model="cat" required/>
+       <br>
+       <input type="text" name="section" placeholder="Enter section heading" class="form-control" ng-model="section" required/>
+       <br>
+    <textarea rows="7" cols="50" name="cont"  class="form-control" ng-model="cont" placeholder="Enter the content..." >
+       </textarea>
+       <br>
+        <button type="submit" class="btn btn-primary" >Add <span class="glyphicon glyphicon-plus"></span></button>
+   
+   
+    </form>
+
+
+</center>
+</div>
+        <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</div>

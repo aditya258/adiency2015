@@ -16,26 +16,12 @@
     <!-- endbuild -->
   </head>
   <body ng-app="mytodoApp">
-<!-- <div class="page-header">
-  
-    <div class="mobile-bar">
-      <h6 class="logo">
-        <a href="/">
-        <img src="images/yeoman.png" alt="Yeoman">
-      </a>
-    </h1>
-  </div>
-   
- </div>
- -->
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
+
 
     <!-- Add your site or application content here -->
-    <div class="header">
+    <div class="header" style="background-color:grey" >
 
-      <div class="navbar navbar-default" role="navigation">
+      <div class="navbar navbar-default" role="navigation" style="background-color:lightgrey">
 
     <!-- <div class="mobile-bar">
       
@@ -44,8 +30,8 @@
       </a>
     
   </div> -->
-        <div class="container">
-
+        <div class="container" >
+          
           <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
@@ -55,19 +41,23 @@
               <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="#/login">Encyclopedia</a>
+            <a class="navbar-brand" href="#/search"><b><i>ENCYCLOPEDIA</i></b></a>
           </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+<!--     ng-if="vari"      <div ng-if=" window.localStorage['tok'] =='' ">
+ -->          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="loginCtrl">
 
             <ul class="nav navbar-nav">
-              <li class="active"><a ng-href="#/login">login</a></li>
-              <li class="active"><a ng-href="#/signup">sign up</a></li>
+<!--               <li><a ng-href="#/searchin">ser</a></li>
+ -->              <li class="active" ng-if="vari"><a ng-href="#/login"><i>Login</i></a></li>
+              <li class="active" ng-if="vari"><a ng-href="#/signup"><i>Sign Up</i></a></li>
+              <li class="active" ng-if="!vari"><a ng-click="logout()" ng-href="#/search"><i>Logout</i></a></li>
+
               <li><a ng-href="#/about">About</a></li>
               <!-- <li><a ng-href="#/">Contact</a></li> -->
             </ul>
             <!-- <img src="images/ency.png" alt="ency"> -->
           </div>
+         </div>
         </div>
       </div>
     </div>
@@ -76,8 +66,8 @@
     <div ng-view=""></div>
     </div>
 
-    <div class="footer">
-      <div class="container">
+    <div class="footer" >
+      <div class="container" >
         <p><span class="glyphicon glyphicon-heart"></span> from team NFN</p>
       </div>
     </div>
@@ -116,7 +106,15 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
-         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/search.js"></script>
+        <script src="scripts/controllers/searchin.js"></script>
+        <script src="scripts/controllers/forgot.js"></script>
+        <script src="scripts/controllers/editarticle.js"></script>
+        <script src="scripts/controllers/admin.js"></script>
+        <script src="scripts/controllers/revision.js"></script>
+
+        <script src="scripts/services/dataservice.js"></script>
         <!-- endbuild -->
 </body>
 </html>

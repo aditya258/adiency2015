@@ -1,1 +1,61 @@
-<p>This is the about view.</p>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="styles/simple-sidebar.css" rel="stylesheet">
+
+<div class="page-container">
+<div class="header">
+
+        <form name="searchform" ng-submit="search()"  class="form-inline">
+    <input ng-model="topic" type="text"  class="form-control" size="85">
+    <button type="submit" class="btn btn-primary">GO <span class="glyphicon glyphicon-search"></span></button>
+        </form>
+    </div>
+           <div id="sidebar-wrapper">
+
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#/about">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+<div class="main-content">
+                <!--   <div ng-include="'views/about.html'"></div> -->
+                <p>This is the about view.</p>
+               <!--  <pre>list2={{vari}}</pre>
+ -->
+</div>
+        <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</div>
+

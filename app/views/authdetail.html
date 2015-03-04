@@ -1,0 +1,36 @@
+<head>
+<style type="text/css">
+table, th , td {
+  border: 5px solid grey;
+  border-collapse: collapse;
+  padding: 20px;
+}
+
+table tr:{
+  background-color: #ffffff;
+}
+</style>
+</head>
+<div class="main-content">
+       
+       <div class="jumbotron text-center">
+   
+       <div ng-controller="AboutCtrl">
+       <center>
+              <h2 style="font-family:Comic Sans MS"><i>User Details</i></h2>
+       	<table>
+       		<tr>
+       			<th>USERNAME</th> <td>{{uname}}</td>
+       		</tr>
+                     <tr>
+                            <th>EMAIL</th> <td>{{umail}}</td>
+                     </tr>
+              </table>
+<br>
+ <p><a class="btn  btn-primary" ng-click="back()" ><span class="glyphicon glyphicon-triangle-left"></span>  Back </a></p>
+
+       	</center>
+              </div>
+
+       </div>   
+</div>

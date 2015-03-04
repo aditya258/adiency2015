@@ -1,0 +1,78 @@
+
+    <!-- Bootstrap Core CSS -->
+    <link href="styles/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="styles/simple-sidebar.css" rel="stylesheet">
+
+<div class="page-container">
+<!-- <div class="header" ng-controller="searchCtrl">
+ 
+        <form name="mysearch" ng-submit="submitmysearch(mysearch.$valid)"  class="form-inline">
+    <input ng-model="word" type="text" name="word"  class="form-control" size="85" required/>
+    <button type="submit" class="btn btn-primary">GO <span class="glyphicon glyphicon-search"></span></button>
+        </form>
+    </div> -->
+           <div id="sidebar-wrapper">
+<div ng-controller="loginCtrl">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand" ng-if="!vari">
+                    <a ng-click="direct()">
+                        Main Page
+                    </a>
+                </li>
+                <li class="sidebar-brand" ng-if="!vari">
+                    <a href="#/authdetail">
+                        User Details
+                    </a>
+                </li>
+                <li class="sidebar-brand" ng-if="con">
+                    <a href="#/edit">Edit Content</a>
+                </li>
+                <li class="sidebar-brand" ng-controller="searchinCtrl">
+                      <a ng-click="random()">Random Article</a>
+                </li>
+                 <li class="sidebar-brand" ng-controller="searchinCtrl">
+                    <a ng-click="latest()">Latest Article </a>               
+                 </li>
+                 <li class="sidebar-brand" ng-controller="adminCtrl" ng-if="con">
+                    <a href="#/revisionhistory">Revision History</a>
+                </li>
+               <!-- <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li> -->
+            </ul>
+        </div>
+        </div>
+<div class="main-content">
+
+<!--                   <div ng-include="'views/about.html'"></div>
+ -->
+ <div ng-controller="loginCtrl">
+    <div ng-if="vari">
+        <div ng-include="'views/searchunauth.html'"></div>
+    </div>
+    <div ng-if="!vari">
+
+
+            <div ng-include="'views/searchauth.html'"></div>
+    </div>
+ </div>
+</div>
+        <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</div>

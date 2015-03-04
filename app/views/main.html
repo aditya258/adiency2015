@@ -1,24 +1,6 @@
 <div class="container">
-   <h2>encyclopedia new_user</h2>
-   <!-- <form role="form" ng-submit="validate()">
-   <div  ng-model="todos">
-      <p class="input-group"  >
-
-  <input type="text"  ng-model="nam" placeholder="name"  ng-minlength=5 class="form-control">
-  <input type="mail" ng-model="mailid" placeholder="email_id" class="form-control">
-  <input type="password" ng-model="pwd"  placeholder="password"  ng-minlength=5 class="form-control"> -->
-  <!-- <span class="input-group-btn">
-    <button class="btn btn-danger" ng-click="removeTodo($index)" aria-label="Remove">X</button>
-  </span> -->
-<!-- </p>
- 
-          <input type="submit" class="btn btn-primary" value="sign up" id="">
-</div> -->
-<!-- <pre>list1={{list1}}</pre>
-<pre>list2={{list2}}</pre>
-<pre>list3={{list3}}</pre> -->
-<!-- </form> -->
- <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+   <h2 style="font-family:Comic Sans MS"><i>Encyclopedia New User</i></h2>
+ <form  name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
 <div  ng-model="todos">
         <!-- NAME -->
         <div class="form-group" ng-class="{ 'has-error' : userForm.nam.$invalid && !userForm.nam.$pristine }">
@@ -26,7 +8,7 @@
             <input type="text" name="nam" placeholder="Enter Name" class="form-control" ng-model="user.nam" required/>
             <p ng-show="userForm.nam.$invalid && !userForm.nam.$pristine" class="help-block">You name is required.</p>
         </div>
-        
+        <br>
        
         <!-- EMAIL -->
         <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
@@ -34,6 +16,7 @@
             <input type="email" name="email" placeholder="Enter E-Mail ID" class="form-control" ng-model="user.email" required/>
             <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
         </div>
+        <br>
          <!-- password -->
         <div class="form-group" ng-class="{ 'has-error' : userForm.pwd.$invalid && !userForm.pwd.$pristine }">
             <!-- <label>Username</label> -->
@@ -41,15 +24,16 @@
             <p ng-show="userForm.pwd.$error.minlength" class="help-block">password is too short.</p>
             <p ng-show="userForm.pwd.$error.maxlength" class="help-block">password is too long.</p>
         </div>
-            
+           <br> 
         
        <!--  <input type="submit" class="btn btn-primary" value="sign up" > -->
-       <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-plus"></span></button>
+      <button type="submit" class="btn btn-primary">Submit <span class="glyphicon glyphicon-plus"></span></button>
       </div>
       </form>
-      <pre>list1={{list1}}</pre>
+
+     <!--  <pre>list1={{list1}}</pre>
 <pre>list2={{list2}}</pre>
-<pre>list3={{list3}}</pre>
+<pre>list3={{list3}}</pre> -->
     
 <!-- <form role="form" ng-submit="addTodo()">
     <div class="row">
